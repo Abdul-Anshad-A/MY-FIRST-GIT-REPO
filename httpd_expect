@@ -1,0 +1,15 @@
+#!/usr/bin/expect
+
+set timeout 20
+
+set start_stop_restart [lindex $argv 0]
+
+set pass_phrase [lindex $argv 1]
+
+spawn /apps/apache/current/bin/httpd.init $start_stop_restart
+
+expect "Enter pass phrase:"
+
+send "$pass_phrase\r";
+
+interact

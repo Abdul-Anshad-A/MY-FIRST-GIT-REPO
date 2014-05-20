@@ -1,0 +1,9 @@
+{
+	"package": "Mod_Security",
+	"path": "/root/package_source/mod_security/2.8.0/",
+	"removeOld_installNew": "1",
+	"version": "2.8.0",
+	"platform": "RHEL6",
+	"arch": "x86",
+	"tomcatPath": "/root/tomcat/"
+}
