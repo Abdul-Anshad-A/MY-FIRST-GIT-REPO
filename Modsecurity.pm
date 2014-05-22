@@ -215,7 +215,6 @@ LoadModule unique_id_module modules/mod_unique_id.so
 		$log->info("Checking Apache httpd server status");
 		sleep(4);
 		my $temp=`/apps/apache/current/bin/httpd.init status`;
-		print "\n\n$temp\n\n";
 		if($temp=~ /running/)
 			{
 				#Do nothing :-P
@@ -225,7 +224,7 @@ LoadModule unique_id_module modules/mod_unique_id.so
 			}
 		else
 			{
-				printf "%s", colored( "Httpd server is not started, please check it\n", 'yellow');
+				#printf "%s", colored( "Httpd server is not started, please check it\n", 'yellow');
 				$log->error("Httpd server is not started, please check it.");
 				exit 1;
 			} 
@@ -277,18 +276,19 @@ sub ApacheNoLog
 
 		printf "%s\n", colored( "\n\nTEST CASE: Apache No Log Check\n\n", 'green' );		
 		#copy("modsecurity_crs_10_config.conf", "/apps/mod_security/current/conf/");
-		printf "%s", colored("\nCopying the new configuration file to test the Apache no log patch. . . .\n", 'red');
+		#printf "%s", colored("\nCopying the new configuration file to test the Apache no log patch. . . .\n", 'red');
+		$log->info("Copying the new configuration file to test the Apache no log patch");
 		system("cp -f modsecurity_crs_10_config.conf  /apps/mod_security/current/conf/");
 
 		
 		#To restart httpd server
-		printf "%s", colored("\nRestarting httpd server\n", 'red');
+		#printf "%s", colored("\nRestarting httpd server\n", 'red');
+		$log->info("Restarting httpd server");
 		#system("/apps/apache/current/bin/httpd.init restart");
 		
-		system("./httpd_expect restart 91vis91");	
+		my $restart=`./httpd_expect restart 91vis91 &>/dev/null`;	
 		sleep(4);
 		my $temp=`/apps/apache/current/bin/httpd.init status`;
-		print "\n\n$temp\n\n";
 		if($temp=~ /running/)
 			{
 				
@@ -297,7 +297,8 @@ sub ApacheNoLog
 			}		
 		else
 			{  
-				printf "%s", colored("Httpd server is not started, please check it\n", 'yellow');
+				#printf "%s", colored("Httpd server is not started, please check it\n", 'yellow');
+				$log->error("Httpd server is not started, please check it.");
 				exit 1;
 			}
 
@@ -315,23 +316,27 @@ sub ApacheNoLog
 		#
 		#
 		my $url = 'http://localhost/?abc=../../';
-		printf "%s", colored("Accessing the URL http://localhost/?abc=../../ \n", 'red');
+		#printf "%s", colored("Accessing the URL http://localhost/?abc=../../ \n", 'red');
+		$log->error("Accessing the URL http://localhost/?abc=../../");
 		my $content = get $url;
 		#die "Couldn't get $url" unless defined $content;
 		
 		sleep(5);
 		if((-s "/apps/apache/current/logs/error_log")!=$size_httpd)
 			{
-				printf "%s", colored( "\nApache log has changed, No log pactch doesn't seem to be working !!\n", 'yellow');
+				#printf "%s", colored( "\nApache log has changed, No log pactch doesn't seem to be working !!\n", 'yellow');
+				$log->error("Apache log has changed, No log pactch doesn't seem to be working !!");
 				
 			}
 		if((-s "/var/log/modsec_audit.log")==$size_mod)
 			{
-				printf "%s", colored( "\nMod_security is not logging any stuffs\n", 'yellow');
+				#printf "%s", colored( "\nMod_security is not logging any stuffs\n", 'yellow');
+				$log->error("Mod_security is not logging any stuffs");
 			}
 		else
 			{
-				printf "%s", colored( "\nApache No Log Patch is working fine !!\n", 'red');
+				#printf "%s", colored( "\nApache No Log Patch is working fine !!\n", 'red');
+				$log->error("Apache No Log Patch is working fine !!");
 				$patch_audit_log=`tail /var/log/modsec_audit.log`;
 				$patch_error_log=`tail /apps/apache/current/logs/error_log`;
 				$passed_testcase++;
