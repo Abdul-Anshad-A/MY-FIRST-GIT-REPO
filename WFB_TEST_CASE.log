@@ -87,3 +87,138 @@
 [ 2014/05/22 07:59:07 ] [ Modsecurity.pm:235 - Modsecurity::FuncTest ] [ INFO ] Checking wether Mod_Security module is loaded or not.
 [ 2014/05/22 07:59:07 ] [ Modsecurity.pm:246 - Modsecurity::FuncTest ] [ INFO ] Security module is loaded.
 [ 2014/05/22 07:59:07 ] [ Modsecurity.pm:249 - Modsecurity::FuncTest ] [ INFO ] PASSED TEST CASE : Functional test
+[ 2014/05/22 08:10:42 ] [ BasicFunctionalTest.pl:43 - main:: ] [ INFO ] 
+
+
+[ 2014/05/22 08:10:42 ] [ BasicFunctionalTest.pl:44 - main:: ] [ INFO ] Details of the package that I'm going to test ...
+[ 2014/05/22 08:10:42 ] [ BasicFunctionalTest.pl:45 - main:: ] [ INFO ] Package is : Mod_Security
+[ 2014/05/22 08:10:42 ] [ BasicFunctionalTest.pl:46 - main:: ] [ INFO ] Version is : 2.8.0
+[ 2014/05/22 08:10:42 ] [ BasicFunctionalTest.pl:47 - main:: ] [ INFO ] Platform is : RHEL6
+[ 2014/05/22 08:10:42 ] [ BasicFunctionalTest.pl:48 - main:: ] [ INFO ] Architecture is : x86
+[ 2014/05/22 08:10:42 ] [ CommonTestCase.pm:84 - CommonTestCase::InstallTree ] [ INFO ] Searching for pre-installed packages ...
+[ 2014/05/22 08:10:42 ] [ CommonTestCase.pm:122 - CommonTestCase::InstallTree ] [ INFO ] Package is already installed.
+[ 2014/05/22 08:10:42 ] [ CommonTestCase.pm:132 - CommonTestCase::InstallTree ] [ INFO ] Removing package Mod_Security ...
+[ 2014/05/22 08:10:44 ] [ CommonTestCase.pm:158 - CommonTestCase::InstallTree ] [ INFO ] Installing Mod_Security ...
+[ 2014/05/22 08:10:45 ] [ CommonTestCase.pm:204 - CommonTestCase::InstallTree ] [ INFO ] Checking the directory structure in /apps/mod_security/current
+[ 2014/05/22 08:10:45 ] [ CommonTestCase.pm:219 - CommonTestCase::InstallTree ] [ INFO ] Directory structure matches.
+[ 2014/05/22 08:10:45 ] [ CommonTestCase.pm:327 - CommonTestCase::InstallTree ] [ INFO ] TEST CASE PASSED : Installation and tree structure
+[ 2014/05/22 08:10:45 ] [ CommonTestCase.pm:132 - CommonTestCase::InstallTree ] [ INFO ] Removing package Mod_Security ...
+[ 2014/05/22 08:10:46 ] [ CommonTestCase.pm:232 - CommonTestCase::InstallTree ] [ INFO ] /apps/mod_security/current Link is removed.
+[ 2014/05/22 08:10:46 ] [ CommonTestCase.pm:333 - CommonTestCase::InstallTree ] [ INFO ] TEST CASE PASSED : Package removal and tree structure
+[ 2014/05/22 08:10:46 ] [ CommonTestCase.pm:368 - CommonTestCase::FileStructType ] [ INFO ] Installing the package Mod_Security ...
+[ 2014/05/22 08:10:46 ] [ CommonTestCase.pm:591 - CommonTestCase::LinkTest ] [ INFO ] Testing whether the current link is pointing to packge version
+[ 2014/05/22 08:10:46 ] [ CommonTestCase.pm:598 - CommonTestCase::LinkTest ] [ INFO ] Current link is point to /apps/mod_security/2.8.0
+[ 2014/05/22 08:10:46 ] [ CommonTestCase.pm:376 - CommonTestCase::FileStructType ] [ INFO ] Searching for files which are not under directory /apps ...
+[ 2014/05/22 08:10:46 ] [ CommonTestCase.pm:377 - CommonTestCase::FileStructType ] [ INFO ] Searching for ELF files ...
+[ 2014/05/22 08:10:47 ] [ CommonTestCase.pm:431 - CommonTestCase::FileStructType ] [ INFO ] Package directory structure is valid : All files are within /apps directory.
+[ 2014/05/22 08:10:47 ] [ CommonTestCase.pm:444 - CommonTestCase::FileStructType ] [ INFO ] PASSED TEST CASE : Package directory structure and file types
+[ 2014/05/22 08:10:47 ] [ Modsecurity.pm:50 - Modsecurity::DynamicLib ] [ INFO ] Checking for dynamic library files in mod_security2.so and mlogc ...
+[ 2014/05/22 08:10:47 ] [ Modsecurity.pm:62 - Modsecurity::DynamicLib ] [ INFO ] All Dynamic Library files are loaded.
+[ 2014/05/22 08:10:47 ] [ Modsecurity.pm:67 - Modsecurity::DynamicLib ] [ INFO ] Checking wether libpcre is loaded ...
+[ 2014/05/22 08:10:47 ] [ Modsecurity.pm:78 - Modsecurity::DynamicLib ] [ INFO ] libpcre is loaded
+[ 2014/05/22 08:10:47 ] [ Modsecurity.pm:83 - Modsecurity::DynamicLib ] [ INFO ] Checking the symlinks of libssl and libcrypto
+[ 2014/05/22 08:10:47 ] [ Modsecurity.pm:91 - Modsecurity::DynamicLib ] [ INFO ] Symlinks for libcrypto and libssl are correct
+[ 2014/05/22 08:10:47 ] [ Modsecurity.pm:103 - Modsecurity::DynamicLib ] [ INFO ] Checking wether mod_security2.so exists or not.
+[ 2014/05/22 08:10:47 ] [ Modsecurity.pm:112 - Modsecurity::DynamicLib ] [ INFO ] Mod_security module is present.
+[ 2014/05/22 08:10:47 ] [ Modsecurity.pm:125 - Modsecurity::DynamicLib ] [ INFO ] PASSED TEST CASE : Dynamic libraries
+[ 2014/05/22 08:10:47 ] [ Modsecurity.pm:144 - Modsecurity::FuncTest ] [ INFO ] Checking wether Mod_Security config files are loaded in httpd.conf...
+[ 2014/05/22 08:10:47 ] [ Modsecurity.pm:163 - Modsecurity::FuncTest ] [ INFO ] Mod_security Config file already exits.
+[ 2014/05/22 08:10:47 ] [ Modsecurity.pm:186 - Modsecurity::FuncTest ] [ INFO ] Creating symlinks for activated_rules
+[ 2014/05/22 08:10:47 ] [ Modsecurity.pm:206 - Modsecurity::FuncTest ] [ INFO ] Functionality set up is all done !!
+[ 2014/05/22 08:10:47 ] [ Modsecurity.pm:208 - Modsecurity::FuncTest ] [ INFO ] Restarting httpd server ...
+[ 2014/05/22 08:10:47 ] [ Modsecurity.pm:211 - Modsecurity::FuncTest ] [ INFO ] Using expect script for PASSPHRASE
+[ 2014/05/22 08:10:49 ] [ Modsecurity.pm:215 - Modsecurity::FuncTest ] [ INFO ] Checking Apache httpd server status
+[ 2014/05/22 08:10:53 ] [ Modsecurity.pm:223 - Modsecurity::FuncTest ] [ INFO ] Httpd server started
+[ 2014/05/22 08:10:53 ] [ Modsecurity.pm:235 - Modsecurity::FuncTest ] [ INFO ] Checking wether Mod_Security module is loaded or not.
+[ 2014/05/22 08:10:53 ] [ Modsecurity.pm:246 - Modsecurity::FuncTest ] [ INFO ] Security module is loaded.
+[ 2014/05/22 08:10:53 ] [ Modsecurity.pm:249 - Modsecurity::FuncTest ] [ INFO ] PASSED TEST CASE : Functional test
+[ 2014/05/22 08:12:17 ] [ BasicFunctionalTest.pl:43 - main:: ] [ INFO ] 
+
+
+[ 2014/05/22 08:12:17 ] [ BasicFunctionalTest.pl:44 - main:: ] [ INFO ] Details of the package that I'm going to test ...
+[ 2014/05/22 08:12:17 ] [ BasicFunctionalTest.pl:45 - main:: ] [ INFO ] Package is : Mod_Security
+[ 2014/05/22 08:12:17 ] [ BasicFunctionalTest.pl:46 - main:: ] [ INFO ] Version is : 2.8.0
+[ 2014/05/22 08:12:17 ] [ BasicFunctionalTest.pl:47 - main:: ] [ INFO ] Platform is : RHEL6
+[ 2014/05/22 08:12:17 ] [ BasicFunctionalTest.pl:48 - main:: ] [ INFO ] Architecture is : x86
+[ 2014/05/22 08:12:17 ] [ CommonTestCase.pm:84 - CommonTestCase::InstallTree ] [ INFO ] Searching for pre-installed packages ...
+[ 2014/05/22 08:12:17 ] [ CommonTestCase.pm:122 - CommonTestCase::InstallTree ] [ INFO ] Package is already installed.
+[ 2014/05/22 08:12:17 ] [ CommonTestCase.pm:132 - CommonTestCase::InstallTree ] [ INFO ] Removing package Mod_Security ...
+[ 2014/05/22 08:12:17 ] [ CommonTestCase.pm:158 - CommonTestCase::InstallTree ] [ INFO ] Installing Mod_Security ...
+[ 2014/05/22 08:12:18 ] [ CommonTestCase.pm:204 - CommonTestCase::InstallTree ] [ INFO ] Checking the directory structure in /apps/mod_security/current
+[ 2014/05/22 08:12:18 ] [ CommonTestCase.pm:219 - CommonTestCase::InstallTree ] [ INFO ] Directory structure matches.
+[ 2014/05/22 08:12:18 ] [ CommonTestCase.pm:327 - CommonTestCase::InstallTree ] [ INFO ] TEST CASE PASSED : Installation and tree structure
+[ 2014/05/22 08:12:18 ] [ CommonTestCase.pm:132 - CommonTestCase::InstallTree ] [ INFO ] Removing package Mod_Security ...
+[ 2014/05/22 08:12:18 ] [ CommonTestCase.pm:232 - CommonTestCase::InstallTree ] [ INFO ] /apps/mod_security/current Link is removed.
+[ 2014/05/22 08:12:18 ] [ CommonTestCase.pm:333 - CommonTestCase::InstallTree ] [ INFO ] TEST CASE PASSED : Package removal and tree structure
+[ 2014/05/22 08:12:18 ] [ CommonTestCase.pm:368 - CommonTestCase::FileStructType ] [ INFO ] Installing the package Mod_Security ...
+[ 2014/05/22 08:12:19 ] [ CommonTestCase.pm:591 - CommonTestCase::LinkTest ] [ INFO ] Testing whether the current link is pointing to packge version
+[ 2014/05/22 08:12:19 ] [ CommonTestCase.pm:598 - CommonTestCase::LinkTest ] [ INFO ] Current link is point to /apps/mod_security/2.8.0
+[ 2014/05/22 08:12:19 ] [ CommonTestCase.pm:376 - CommonTestCase::FileStructType ] [ INFO ] Searching for files which are not under directory /apps ...
+[ 2014/05/22 08:12:19 ] [ CommonTestCase.pm:377 - CommonTestCase::FileStructType ] [ INFO ] Searching for ELF files ...
+[ 2014/05/22 08:12:19 ] [ CommonTestCase.pm:431 - CommonTestCase::FileStructType ] [ INFO ] Package directory structure is valid : All files are within /apps directory.
+[ 2014/05/22 08:12:19 ] [ CommonTestCase.pm:444 - CommonTestCase::FileStructType ] [ INFO ] PASSED TEST CASE : Package directory structure and file types
+[ 2014/05/22 08:12:19 ] [ Modsecurity.pm:50 - Modsecurity::DynamicLib ] [ INFO ] Checking for dynamic library files in mod_security2.so and mlogc ...
+[ 2014/05/22 08:12:19 ] [ Modsecurity.pm:62 - Modsecurity::DynamicLib ] [ INFO ] All Dynamic Library files are loaded.
+[ 2014/05/22 08:12:19 ] [ Modsecurity.pm:67 - Modsecurity::DynamicLib ] [ INFO ] Checking wether libpcre is loaded ...
+[ 2014/05/22 08:12:19 ] [ Modsecurity.pm:78 - Modsecurity::DynamicLib ] [ INFO ] libpcre is loaded
+[ 2014/05/22 08:12:19 ] [ Modsecurity.pm:83 - Modsecurity::DynamicLib ] [ INFO ] Checking the symlinks of libssl and libcrypto
+[ 2014/05/22 08:12:19 ] [ Modsecurity.pm:91 - Modsecurity::DynamicLib ] [ INFO ] Symlinks for libcrypto and libssl are correct
+[ 2014/05/22 08:12:19 ] [ Modsecurity.pm:103 - Modsecurity::DynamicLib ] [ INFO ] Checking wether mod_security2.so exists or not.
+[ 2014/05/22 08:12:19 ] [ Modsecurity.pm:112 - Modsecurity::DynamicLib ] [ INFO ] Mod_security module is present.
+[ 2014/05/22 08:12:19 ] [ Modsecurity.pm:125 - Modsecurity::DynamicLib ] [ INFO ] PASSED TEST CASE : Dynamic libraries
+[ 2014/05/22 08:12:19 ] [ Modsecurity.pm:144 - Modsecurity::FuncTest ] [ INFO ] Checking wether Mod_Security config files are loaded in httpd.conf...
+[ 2014/05/22 08:12:19 ] [ Modsecurity.pm:163 - Modsecurity::FuncTest ] [ INFO ] Mod_security Config file already exits.
+[ 2014/05/22 08:12:19 ] [ Modsecurity.pm:186 - Modsecurity::FuncTest ] [ INFO ] Creating symlinks for activated_rules
+[ 2014/05/22 08:12:19 ] [ Modsecurity.pm:206 - Modsecurity::FuncTest ] [ INFO ] Functionality set up is all done !!
+[ 2014/05/22 08:12:19 ] [ Modsecurity.pm:208 - Modsecurity::FuncTest ] [ INFO ] Restarting httpd server ...
+[ 2014/05/22 08:12:19 ] [ Modsecurity.pm:211 - Modsecurity::FuncTest ] [ INFO ] Using expect script for PASSPHRASE
+[ 2014/05/22 08:12:20 ] [ Modsecurity.pm:215 - Modsecurity::FuncTest ] [ INFO ] Checking Apache httpd server status
+[ 2014/05/22 08:12:24 ] [ Modsecurity.pm:223 - Modsecurity::FuncTest ] [ INFO ] Httpd server started
+[ 2014/05/22 08:12:24 ] [ Modsecurity.pm:235 - Modsecurity::FuncTest ] [ INFO ] Checking wether Mod_Security module is loaded or not.
+[ 2014/05/22 08:12:24 ] [ Modsecurity.pm:246 - Modsecurity::FuncTest ] [ INFO ] Security module is loaded.
+[ 2014/05/22 08:12:24 ] [ Modsecurity.pm:249 - Modsecurity::FuncTest ] [ INFO ] PASSED TEST CASE : Functional test
+[ 2014/05/22 08:21:28 ] [ BasicFunctionalTest.pl:43 - main:: ] [ INFO ] 
+
+
+[ 2014/05/22 08:21:28 ] [ BasicFunctionalTest.pl:44 - main:: ] [ INFO ] Details of the package that I'm going to test ...
+[ 2014/05/22 08:21:28 ] [ BasicFunctionalTest.pl:45 - main:: ] [ INFO ] Package is : Mod_Security
+[ 2014/05/22 08:21:28 ] [ BasicFunctionalTest.pl:46 - main:: ] [ INFO ] Version is : 2.8.0
+[ 2014/05/22 08:21:28 ] [ BasicFunctionalTest.pl:47 - main:: ] [ INFO ] Platform is : RHEL6
+[ 2014/05/22 08:21:28 ] [ BasicFunctionalTest.pl:48 - main:: ] [ INFO ] Architecture is : x86
+[ 2014/05/22 08:21:28 ] [ CommonTestCase.pm:84 - CommonTestCase::InstallTree ] [ INFO ] Searching for pre-installed packages ...
+[ 2014/05/22 08:21:28 ] [ CommonTestCase.pm:122 - CommonTestCase::InstallTree ] [ INFO ] Package is already installed.
+[ 2014/05/22 08:21:28 ] [ CommonTestCase.pm:132 - CommonTestCase::InstallTree ] [ INFO ] Removing package Mod_Security ...
+[ 2014/05/22 08:21:28 ] [ CommonTestCase.pm:158 - CommonTestCase::InstallTree ] [ INFO ] Installing Mod_Security ...
+[ 2014/05/22 08:21:29 ] [ CommonTestCase.pm:204 - CommonTestCase::InstallTree ] [ INFO ] Checking the directory structure in /apps/mod_security/current
+[ 2014/05/22 08:21:29 ] [ CommonTestCase.pm:219 - CommonTestCase::InstallTree ] [ INFO ] Directory structure matches.
+[ 2014/05/22 08:21:29 ] [ CommonTestCase.pm:327 - CommonTestCase::InstallTree ] [ INFO ] TEST CASE PASSED : Installation and tree structure
+[ 2014/05/22 08:21:29 ] [ CommonTestCase.pm:132 - CommonTestCase::InstallTree ] [ INFO ] Removing package Mod_Security ...
+[ 2014/05/22 08:21:29 ] [ CommonTestCase.pm:232 - CommonTestCase::InstallTree ] [ INFO ] /apps/mod_security/current Link is removed.
+[ 2014/05/22 08:21:29 ] [ CommonTestCase.pm:333 - CommonTestCase::InstallTree ] [ INFO ] TEST CASE PASSED : Package removal and tree structure
+[ 2014/05/22 08:21:29 ] [ CommonTestCase.pm:368 - CommonTestCase::FileStructType ] [ INFO ] Installing the package Mod_Security ...
+[ 2014/05/22 08:21:30 ] [ CommonTestCase.pm:591 - CommonTestCase::LinkTest ] [ INFO ] Testing whether the current link is pointing to packge version
+[ 2014/05/22 08:21:30 ] [ CommonTestCase.pm:598 - CommonTestCase::LinkTest ] [ INFO ] Current link is point to /apps/mod_security/2.8.0
+[ 2014/05/22 08:21:30 ] [ CommonTestCase.pm:376 - CommonTestCase::FileStructType ] [ INFO ] Searching for files which are not under directory /apps ...
+[ 2014/05/22 08:21:30 ] [ CommonTestCase.pm:377 - CommonTestCase::FileStructType ] [ INFO ] Searching for ELF files ...
+[ 2014/05/22 08:21:30 ] [ CommonTestCase.pm:431 - CommonTestCase::FileStructType ] [ INFO ] Package directory structure is valid : All files are within /apps directory.
+[ 2014/05/22 08:21:30 ] [ CommonTestCase.pm:444 - CommonTestCase::FileStructType ] [ INFO ] PASSED TEST CASE : Package directory structure and file types
+[ 2014/05/22 08:21:30 ] [ Modsecurity.pm:50 - Modsecurity::DynamicLib ] [ INFO ] Checking for dynamic library files in mod_security2.so and mlogc ...
+[ 2014/05/22 08:21:30 ] [ Modsecurity.pm:62 - Modsecurity::DynamicLib ] [ INFO ] All Dynamic Library files are loaded.
+[ 2014/05/22 08:21:30 ] [ Modsecurity.pm:67 - Modsecurity::DynamicLib ] [ INFO ] Checking wether libpcre is loaded ...
+[ 2014/05/22 08:21:30 ] [ Modsecurity.pm:78 - Modsecurity::DynamicLib ] [ INFO ] libpcre is loaded
+[ 2014/05/22 08:21:30 ] [ Modsecurity.pm:83 - Modsecurity::DynamicLib ] [ INFO ] Checking the symlinks of libssl and libcrypto
+[ 2014/05/22 08:21:30 ] [ Modsecurity.pm:91 - Modsecurity::DynamicLib ] [ INFO ] Symlinks for libcrypto and libssl are correct
+[ 2014/05/22 08:21:30 ] [ Modsecurity.pm:103 - Modsecurity::DynamicLib ] [ INFO ] Checking wether mod_security2.so exists or not.
+[ 2014/05/22 08:21:30 ] [ Modsecurity.pm:112 - Modsecurity::DynamicLib ] [ INFO ] Mod_security module is present.
+[ 2014/05/22 08:21:30 ] [ Modsecurity.pm:125 - Modsecurity::DynamicLib ] [ INFO ] PASSED TEST CASE : Dynamic libraries
+[ 2014/05/22 08:21:30 ] [ Modsecurity.pm:144 - Modsecurity::FuncTest ] [ INFO ] Checking wether Mod_Security config files are loaded in httpd.conf...
+[ 2014/05/22 08:21:30 ] [ Modsecurity.pm:163 - Modsecurity::FuncTest ] [ INFO ] Mod_security Config file already exits.
+[ 2014/05/22 08:21:30 ] [ Modsecurity.pm:186 - Modsecurity::FuncTest ] [ INFO ] Creating symlinks for activated_rules
+[ 2014/05/22 08:21:30 ] [ Modsecurity.pm:206 - Modsecurity::FuncTest ] [ INFO ] Functionality set up is all done !!
+[ 2014/05/22 08:21:30 ] [ Modsecurity.pm:208 - Modsecurity::FuncTest ] [ INFO ] Restarting httpd server ...
+[ 2014/05/22 08:21:30 ] [ Modsecurity.pm:211 - Modsecurity::FuncTest ] [ INFO ] Using expect script for PASSPHRASE
+[ 2014/05/22 08:21:31 ] [ Modsecurity.pm:215 - Modsecurity::FuncTest ] [ INFO ] Checking Apache httpd server status
+[ 2014/05/22 08:21:35 ] [ Modsecurity.pm:223 - Modsecurity::FuncTest ] [ INFO ] Httpd server started
+[ 2014/05/22 08:21:35 ] [ Modsecurity.pm:235 - Modsecurity::FuncTest ] [ INFO ] Checking wether Mod_Security module is loaded or not.
+[ 2014/05/22 08:21:35 ] [ Modsecurity.pm:246 - Modsecurity::FuncTest ] [ INFO ] Security module is loaded.
+[ 2014/05/22 08:21:35 ] [ Modsecurity.pm:249 - Modsecurity::FuncTest ] [ INFO ] PASSED TEST CASE : Functional test

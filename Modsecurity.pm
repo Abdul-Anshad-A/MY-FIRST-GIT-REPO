@@ -209,7 +209,7 @@ LoadModule unique_id_module modules/mod_unique_id.so
 		#system("/apps/apache/current/bin/httpd.init restart");
 
 		$log->info("Using expect script for PASSPHRASE");
-		system("./httpd_expect restart 91vis91");
+		my $restart=`./httpd_expect restart 91vis91 &>/dev/null`;
 
 		#Just checking wether the server is started or not
 		$log->info("Checking Apache httpd server status");
