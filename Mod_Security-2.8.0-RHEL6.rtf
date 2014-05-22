@@ -1,0 +1,483 @@
+{\rtf1\ansi\deff0{\fonttbl
+{\f0 \froman Times New Roman;}
+}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+{\info 
+{\creatim \yr2014\mo5\dy22\hr7\min59\sec17}
+{\revtim \yr2014\mo5\dy22\hr7\min59\sec17}
+{\title TEST DOCUMENT}
+{\doccomm written by \'2e/Basic\'46unctionalTest\'2epl [Perl RT\'46::Writer v1\'2e11]}
+}
+
+
+{\header \pard\qr\plain\f0
+\chpgn\par}
+
+{\pard
+\cf1\qc\f0\fs40\b
+Mod_Security\_2\'2e8\'2e0\_RHEL6
+\par}
+
+\fs24\b
+
+\line PLAT\'46ORM :\b0
+ RHEL6
+\line \fs24\b
+
+\line SO\'46TWARE :\b0
+ Mod_Security 2\'2e8\'2e0
+\line \fs24\b
+
+\line ARCH :\b0
+ x86
+\line \fs24\b
+
+\line PATH :\b0
+ /root/package_source/mod_security/2\'2e8\'2e0/
+\line {\pard
+\cf2\fs32\b
+
+\line Installation and Tree structure
+\line 
+\par}
+
+\fs24\b
+
+\line [root @ rhel6]# rpm \_ivh /root/package_source/mod_security/2\'2e8\'2e0/
+\line \b0
+pretrans new
+\line Preparing\'2e\'2e\'2e                ##################################################
+\line pre new
+\line mod_security                ##################################################
+\line post new
+\line posttrans new
+\line 
+\line \fs24\b
+
+\line [root @ rhel6]# tree \_d /apps/mod_security/current
+\line \b0
+/apps/mod_security/current
+\line \'e2\'94\'9c\'e2\'94\'80\'e2\'94\'80 bin
+\line \'e2\'94\'9c\'e2\'94\'80\'e2\'94\'80 conf
+\line \'e2\'94\'82\'c2\~\'c2\~ \'e2\'94\'94\'e2\'94\'80\'e2\'94\'80 
+rules
+\line \'e2\'94\'82\'c2\~\'c2\~     \'e2\'94\'9c\'e2\'94\'80\'e2\'94\'80 
+activated_rules
+\line \'e2\'94\'82\'c2\~\'c2\~     \'e2\'94\'9c\'e2\'94\'80\'e2\'94\'80 
+base_rules
+\line \'e2\'94\'82\'c2\~\'c2\~     \'e2\'94\'9c\'e2\'94\'80\'e2\'94\'80 
+experimental_rules
+\line \'e2\'94\'82\'c2\~\'c2\~     \'e2\'94\'9c\'e2\'94\'80\'e2\'94\'80 
+optional_rules
+\line \'e2\'94\'82\'c2\~\'c2\~     \'e2\'94\'9c\'e2\'94\'80\'e2\'94\'80 
+slr_rules
+\line \'e2\'94\'82\'c2\~\'c2\~     \'e2\'94\'9c\'e2\'94\'80\'e2\'94\'80 
+test1
+\line \'e2\'94\'82\'c2\~\'c2\~     \'e2\'94\'94\'e2\'94\'80\'e2\'94\'80 
+test2
+\line \'e2\'94\'94\'e2\'94\'80\'e2\'94\'80 modules
+\line 
+\line 11 directories
+\line 
+\line {\pard
+\cf2\fs32\b
+
+\line Removal and Tree structure
+\line 
+\par}
+
+\fs24\b
+
+\line [root @ rhel6]# rpm \_e mod_security
+\line \b0
+\fs24\b
+
+\line [root @ rhel6]# tree \_d /apps/mod_security/current
+\line \b0
+/apps/mod_security/current [error opening dir]
+\line 
+\line 0 directories
+\line 
+\line {\pard
+\cf2\fs32\b
+
+\line \'46ile Structure
+\line 
+\par}
+
+\fs24\b
+
+\line [root @ rhel6]# ls \_l /apps/mod_security/current
+\line \b0
+lrwxrwxrwx 1 root root 24 May 22 07:58 /apps/mod_security/current 
+\_> /apps/mod_security/2\'2e8\'2e0
+\line 
+\line \fs24\b
+
+\line [root @ rhel6]# file `rpm \_ql mod_security`|grep \_v ^/apps
+\line \b0
+\fs24\b
+
+\line [root @ rhel6]# rpm \_ql mod_security | xargs file | egrep 'EL\'46'
+\line \b0
+/apps/mod_security/2\'2e8\'2e0/bin/mlogc:                                  
+                                                           EL\'46 
+64\_bit LSB executable, x86\_64, version 1 (SYSV), dynamically linked 
+(uses shared libs), for GNU/Linux 2\'2e6\'2e18, stripped
+\line /apps/mod_security/2\'2e8\'2e0/modules/mod_security2\'2eso:          
+                                                                    
+EL\'46 64\_bit LSB shared object, x86\_64, version 1 (SYSV), dynamically 
+linked, stripped
+\line 
+\line {\pard
+\cf2\fs32\b
+
+\line Package Size
+\line 
+\par}
+
+\fs24\b
+
+\line [root @ rhel6]# du \_sch /root/package_source/mod_security/2\'2e8\'2e0/
+\line \b0
+400K\tab /root/package_source/mod_security/2\'2e8\'2e0//mod_security\_2\'2e8\'2e0\_3\'2eel6\'2ex86_64\'2erpm
+\line 400K\tab total
+\line 
+\line \fs24\b
+
+\line [root @ rhel6]# ls \_l /root/package_source/mod_security/2\'2e8\'2e0/
+\line \b0
+total 400
+\line \_rw\_r\_\_r\_\_ 1 root root 407872 Apr 18 16:15 mod_security\_2\'2e8\'2e0\_3\'2eel6\'2ex86_64\'2erpm
+\line 
+\line {\pard
+\cf2\fs32\b
+
+\line MOD_SSL TEST
+\line 
+\par}
+
+\fs24\b
+
+\line [root @ rhel6]# ls \_l /apps/apache/current/modules/mod_security2\'2eso
+\line \b0
+\_rwxr\_xr\_x 1 root root 856880 Apr 18 14:21 /apps/apache/current/modules/mod_security2\'2eso
+\line 
+\line {\pard
+\cf2\fs32\b
+
+\line PCRE TEST
+\line 
+\par}
+
+\fs24\b
+
+\line [root @ rhel6]# ldd /apps/apache/current/modules/mod_security2\'2eso 
+| grep \_i pcre
+\line \b0
+\tab libpcre\'2eso\'2e0 => /lib64/libpcre\'2eso\'2e0 (0x00007f51af11a000)
+\line 
+\line {\pard
+\cf2\fs32\b
+
+\line SHARED OBJECTS
+\line 
+\par}
+
+\fs24\b
+
+\line [root @ rhel6]# ls \_l /apps/apache/current/modules/mod_security2\'2eso
+\line \b0
+\_rwxr\_xr\_x 1 root root 856880 Apr 18 14:21 /apps/apache/current/modules/mod_security2\'2eso
+\line 
+\line \fs24\b
+
+\line [root @ rhel6]# file /apps/apache/current/modules/mod_security2\'2eso
+\line \b0
+/apps/apache/current/modules/mod_security2\'2eso: EL\'46 64\_bit LSB 
+shared object, x86\_64, version 1 (SYSV), dynamically linked, stripped
+\line 
+\line {\pard
+\cf2\fs32\b
+
+\line DYNAMIC LIBRARIES
+\line 
+\par}
+
+\fs24\b
+
+\line [root @ rhel6]# ldd /apps/apache/current/modules/mod_security2\'2eso
+\line \b0
+\tab linux\_vdso\'2eso\'2e1 =>  (0x00007fff16fff000)
+\line \tab libldap\_2\'2e4\'2eso\'2e2 => /lib64/libldap\_2\'2e4\'2eso\'2e2 
+(0x00007f20607c2000)
+\line \tab liblber\_2\'2e4\'2eso\'2e2 => /lib64/liblber\_2\'2e4\'2eso\'2e2 
+(0x00007f20605b3000)
+\line \tab libdb\_4\'2e7\'2eso => /lib64/libdb\_4\'2e7\'2eso (0x00007f206023e000)
+\line \tab libaprutil\_1\'2eso\'2e0 => /usr/lib64/libaprutil\_1\'2eso\'2e0 
+(0x00007f2060017000)
+\line \tab libexpat\'2eso\'2e1 => /lib64/libexpat\'2eso\'2e1 (0x00007f205fdef000)
+\line \tab libapr\_1\'2eso\'2e0 => /usr/lib64/libapr\_1\'2eso\'2e0 
+(0x00007f205fbbb000)
+\line \tab librt\'2eso\'2e1 => /lib64/librt\'2eso\'2e1 (0x00007f205f9b3000)
+\line \tab libcrypt\'2eso\'2e1 => /lib64/libcrypt\'2eso\'2e1 (0x00007f205f77c000)
+\line \tab libpthread\'2eso\'2e0 => /lib64/libpthread\'2eso\'2e0 (0x00007f205f55e000)
+\line \tab libxml2\'2eso\'2e2 => /usr/lib64/libxml2\'2eso\'2e2 (0x00007f205f20c000)
+\line \tab libz\'2eso\'2e1 => /lib64/libz\'2eso\'2e1 (0x00007f205eff6000)
+\line \tab liblua\_5\'2e1\'2eso => /usr/lib64/liblua\_5\'2e1\'2eso 
+(0x00007f205edc8000)
+\line \tab libm\'2eso\'2e6 => /lib64/libm\'2eso\'2e6 (0x00007f205eb44000)
+\line \tab libdl\'2eso\'2e2 => /lib64/libdl\'2eso\'2e2 (0x00007f205e940000)
+\line \tab libpcre\'2eso\'2e0 => /lib64/libpcre\'2eso\'2e0 (0x00007f205e713000)
+\line \tab libc\'2eso\'2e6 => /lib64/libc\'2eso\'2e6 (0x00007f205e380000)
+\line \tab libresolv\'2eso\'2e2 => /lib64/libresolv\'2eso\'2e2 (0x00007f205e166000)
+\line \tab libssl3\'2eso => /usr/lib64/libssl3\'2eso (0x00007f205df2f000)
+\line \tab libsmime3\'2eso => /usr/lib64/libsmime3\'2eso (0x00007f205dd03000)
+\line \tab libnss3\'2eso => /usr/lib64/libnss3\'2eso (0x00007f205d9c8000)
+\line \tab libnssutil3\'2eso => /usr/lib64/libnssutil3\'2eso (0x00007f205d79c000)
+\line \tab libplds4\'2eso => /lib64/libplds4\'2eso (0x00007f205d598000)
+\line \tab libplc4\'2eso => /lib64/libplc4\'2eso (0x00007f205d393000)
+\line \tab libnspr4\'2eso => /lib64/libnspr4\'2eso (0x00007f205d155000)
+\line \tab libsasl2\'2eso\'2e2 => /usr/lib64/libsasl2\'2eso\'2e2 (0x00007f205cf3b000)
+\line \tab /lib64/ld\_linux\_x86\_64\'2eso\'2e2 (0x00000034ac800000)
+\line \tab libfreebl3\'2eso => /lib64/libfreebl3\'2eso (0x00007f205ccd8000)
+\line 
+\line \fs24\b
+
+\line [root @ rhel6]# ldd /apps/mod_security/current/bin/mlogc
+\line \b0
+\tab linux\_vdso\'2eso\'2e1 =>  (0x00007fffae7ee000)
+\line \tab libapr\_1\'2eso\'2e0 => /usr/lib64/libapr\_1\'2eso\'2e0 
+(0x00007fd25ecef000)
+\line \tab librt\'2eso\'2e1 => /lib64/librt\'2eso\'2e1 (0x00000034ae000000)
+\line \tab libcrypt\'2eso\'2e1 => /lib64/libcrypt\'2eso\'2e1 (0x00000034b8400000)
+\line \tab libpthread\'2eso\'2e0 => /lib64/libpthread\'2eso\'2e0 (0x00000034ad800000)
+\line \tab libcurl\'2eso\'2e4 => /usr/lib64/libcurl\'2eso\'2e4 (0x0000003580400000)
+\line \tab libpcre\'2eso\'2e0 => /lib64/libpcre\'2eso\'2e0 (0x00000034be000000)
+\line \tab libc\'2eso\'2e6 => /lib64/libc\'2eso\'2e6 (0x00000034ad000000)
+\line \tab /lib64/ld\_linux\_x86\_64\'2eso\'2e2 (0x00000034ac800000)
+\line \tab libfreebl3\'2eso => /lib64/libfreebl3\'2eso (0x00000034b7c00000)
+\line \tab libidn\'2eso\'2e11 => /lib64/libidn\'2eso\'2e11 (0x00000034b7800000)
+\line \tab libldap\_2\'2e4\'2eso\'2e2 => /lib64/libldap\_2\'2e4\'2eso\'2e2 
+(0x000000328e000000)
+\line \tab libgssapi_krb5\'2eso\'2e2 => /lib64/libgssapi_krb5\'2eso\'2e2 
+(0x00000034bb000000)
+\line \tab libkrb5\'2eso\'2e3 => /lib64/libkrb5\'2eso\'2e3 (0x00000034b9400000)
+\line \tab libk5crypto\'2eso\'2e3 => /lib64/libk5crypto\'2eso\'2e3 
+(0x00000034ba000000)
+\line \tab libcom_err\'2eso\'2e2 => /lib64/libcom_err\'2eso\'2e2 (0x00000034b8000000)
+\line \tab libz\'2eso\'2e1 => /lib64/libz\'2eso\'2e1 (0x00000034adc00000)
+\line \tab libssl3\'2eso => /usr/lib64/libssl3\'2eso (0x00000034bd800000)
+\line \tab libsmime3\'2eso => /usr/lib64/libsmime3\'2eso (0x00000034bd000000)
+\line \tab libnss3\'2eso => /usr/lib64/libnss3\'2eso (0x00000034bc400000)
+\line \tab libnssutil3\'2eso => /usr/lib64/libnssutil3\'2eso (0x00000034bb800000)
+\line \tab libplds4\'2eso => /lib64/libplds4\'2eso (0x00000034bbc00000)
+\line \tab libplc4\'2eso => /lib64/libplc4\'2eso (0x00000034bb400000)
+\line \tab libnspr4\'2eso => /lib64/libnspr4\'2eso (0x00000034bc000000)
+\line \tab libdl\'2eso\'2e2 => /lib64/libdl\'2eso\'2e2 (0x00000034ad400000)
+\line \tab libssh2\'2eso\'2e1 => /usr/lib64/libssh2\'2eso\'2e1 (0x0000003580000000)
+\line \tab liblber\_2\'2e4\'2eso\'2e2 => /lib64/liblber\_2\'2e4\'2eso\'2e2 
+(0x000000328dc00000)
+\line \tab libresolv\'2eso\'2e2 => /lib64/libresolv\'2eso\'2e2 (0x00000034aec00000)
+\line \tab libsasl2\'2eso\'2e2 => /usr/lib64/libsasl2\'2eso\'2e2 (0x00000034b9c00000)
+\line \tab libkrb5support\'2eso\'2e0 => /lib64/libkrb5support\'2eso\'2e0 
+(0x00000034ba800000)
+\line \tab libkeyutils\'2eso\'2e1 => /lib64/libkeyutils\'2eso\'2e1 
+(0x00000034b9000000)
+\line \tab libssl\'2eso\'2e10 => /usr/lib64/libssl\'2eso\'2e10 (0x00007fd25ea7f000)
+\line \tab libcrypto\'2eso\'2e10 => /usr/lib64/libcrypto\'2eso\'2e10 
+(0x00007fd25e6ba000)
+\line \tab libselinux\'2eso\'2e1 => /lib64/libselinux\'2eso\'2e1 (0x00000034ae800000)
+\line 
+\line \fs24\b
+
+\line [root @ rhel6]# ls \_l /usr/lib64/libcrypto\'2eso\'2e10
+\line \b0
+lrwxrwxrwx 1 root root 42 May 17 01:39 /usr/lib64/libcrypto\'2eso\'2e10 
+\_> /apps/openssl/1\'2e0\'2e1e/lib64/libcrypto\'2eso\'2e10
+\line 
+\line \fs24\b
+
+\line [root @ rhel6]# ls \_l /usr/lib64/libssl\'2eso\'2e10
+\line \b0
+lrwxrwxrwx 1 root root 39 May 17 01:39 /usr/lib64/libssl\'2eso\'2e10 
+\_> /apps/openssl/1\'2e0\'2e1e/lib64/libssl\'2eso\'2e10
+\line 
+\line {\pard
+\cf2\fs32\b
+
+\line \'46UNCTIONAL TESTING
+\line 
+\par}
+
+Add following entry in apache configuration file:
+\line LoadModule security2_module modules/mod_security2\'2eso
+\line 
+\line <IfModule security2_module>
+\line             Include /apps/mod_security/current/conf/modsecurity_crs_10_config\'2econf
+\line             Include /apps/mod_security/current/conf/rules/activated_rules/*\'2econf
+\line </IfModule>
+\line \fs24\b
+
+\line Create links for activated rules\b0
+\fs24\b
+
+\line [root @ rhel6]# for f in `ls /apps/mod_security/current/conf/rules/base_rules/` 
+; do ln \_s /apps/mod_security/current/conf/rules/base_rules/ /apps/mod_security/current/conf/rules/activated_rules/ 
+; done
+\line \b0
+\fs24\b
+
+\line [root @ rhel6]# ls \_l /apps/mod_security/current/conf/rules/activated_rules/
+\line \b0
+lrwxrwxrwx 1 root root   79 Apr 18 16:16 modsecurity_35_bad_robots\'2edata 
+\_> /apps/mod_security/current/conf/rules/base_rules/modsecurity_35_bad_robots\'2edata
+\line lrwxrwxrwx 1 root root   77 Apr 18 16:16 modsecurity_35_scanners\'2edata 
+\_> /apps/mod_security/current/conf/rules/base_rules/modsecurity_35_scanners\'2edata
+\line lrwxrwxrwx 1 root root   84 Apr 18 16:16 modsecurity_40_generic_attacks\'2edata 
+\_> /apps/mod_security/current/conf/rules/base_rules/modsecurity_40_generic_attacks\'2edata
+\line lrwxrwxrwx 1 root root   77 Apr 18 16:16 modsecurity_50_outbound\'2edata 
+\_> /apps/mod_security/current/conf/rules/base_rules/modsecurity_50_outbound\'2edata
+\line lrwxrwxrwx 1 root root   85 Apr 18 16:16 modsecurity_50_outbound_malware\'2edata 
+\_> /apps/mod_security/current/conf/rules/base_rules/modsecurity_50_outbound_malware\'2edata
+\line \'2e
+\line \'2e
+\line \'2e
+\line \'2e
+\line lrwxrwxrwx 1 root root   89 Apr 18 16:16 modsecurity_crs_49_inbound_blocking\'2econf 
+\_> /apps/mod_security/current/conf/rules/base_rules/modsecurity_crs_49_inbound_blocking\'2econf
+\line lrwxrwxrwx 1 root root   81 Apr 18 16:16 modsecurity_crs_50_outbound\'2econf 
+\_> /apps/mod_security/current/conf/rules/base_rules/modsecurity_crs_50_outbound\'2econf
+\line lrwxrwxrwx 1 root root   90 Apr 18 16:16 modsecurity_crs_59_outbound_blocking\'2econf 
+\_> /apps/mod_security/current/conf/rules/base_rules/modsecurity_crs_59_outbound_blocking\'2econf
+\line lrwxrwxrwx 1 root root   84 Apr 18 16:16 modsecurity_crs_60_correlation\'2econf 
+\_> /apps/mod_security/current/conf/rules/base_rules/modsecurity_crs_60_correlation\'2econf
+\line \_rw\_r\_\_\_\_\_ 1 root root 5720 Apr 18 14:21 README
+\line 
+\line \fs24\b
+
+\line [root @ rhel6]# /apps/apache/current/bin/httpd\'2einit restart
+\line \b0
+Stopping httpd:                                            [  OK  
+]
+\line Starting httpd:                                            [  
+OK  ]
+\line 
+\line \fs24\b
+
+\line [root @ rhel6]# /apps/apache/current/bin/httpd \_M | grep sec
+\line \b0
+ security2_module (shared)
+\line 
+\line {\pard
+\cf2\fs32\b
+
+\line APACHE LOG CHECK
+\line 
+\par}
+
+\fs24\b
+
+\line [root @ rhel6]# tail /apps/apache/current/logs/error_log
+\line \b0
+[Thu May 22 07:59:03 2014] [notice] ModSecurity for Apache/2\'2e8\'2e0 
+(http://www\'2emodsecurity\'2eorg/) configured\'2e
+\line [Thu May 22 07:59:03 2014] [notice] ModSecurity: APR compiled 
+version="1\'2e5\'2e0"; loaded version="1\'2e5\'2e0"
+\line [Thu May 22 07:59:03 2014] [notice] ModSecurity: PCRE compiled 
+version="7\'2e8 "; loaded version="7\'2e8 2008\_09\_05"
+\line [Thu May 22 07:59:03 2014] [notice] ModSecurity: LUA compiled 
+version="Lua 5\'2e1"
+\line [Thu May 22 07:59:03 2014] [notice] ModSecurity: LIBXML compiled 
+version="2\'2e7\'2e6"
+\line [Thu May 22 07:59:03 2014] [notice] Status engine is currently 
+disabled, enable it by set SecStatusEngine to On\'2e
+\line [Thu May 22 07:59:03 2014] [warn] module ssl_module is already 
+loaded, skipping
+\line [Thu May 22 07:59:03 2014] [notice] Digest: generating secret 
+for digest authentication \'2e\'2e\'2e
+\line [Thu May 22 07:59:03 2014] [notice] Digest: done
+\line [Thu May 22 07:59:04 2014] [notice] Apache/2\'2e2\'2e25 (Unix) 
+DAV/2 mod_ssl/2\'2e2\'2e25 OpenSSL/1\'2e0\'2e1e\_fips configured \_\_ 
+resuming normal operations
+\line 
+\line \fs24\b
+
+\line [root @ rhel6]# /apps/mod_security/current/bin/mlogc \_v
+\line \b0
+   APR: compiled="1\'2e5\'2e0"; loaded="1\'2e5\'2e0"
+\line    PCRE: compiled="7\'2e8"; loaded="7\'2e8 2008\_09\_05"
+\line    cURL: compiled="7\'2e19\'2e7"; loaded="libcurl/7\'2e19\'2e7 
+NSS/3\'2e13\'2e6\'2e0 zlib/1\'2e2\'2e3 libidn/1\'2e18 libssh2/1\'2e4\'2e2"
+\line  
+\line 
+\line {\pard
+\cf2\fs32\b
+
+\line APACHE NO LOGS CHECK
+\line 
+\par}
+
+\fs24\b
+
+\line [root @ rhel6]# cp /root/raj/mod_security/modsecurity_crs_10_config\'2econf 
+/apps/mod_security/current/conf/
+\line \b0
+\fs24\b
+
+\line [root @ rhel6]# /apps/apache/current/bin/httpd\'2einit restart
+\line \b0
+Stopping httpd:                                            [  OK  
+]
+\line Starting httpd:                                            [  
+OK  ]
+\line 
+\line Access the below url to check if details are NOT logged in apache 
+error_log and logged in ONLY audit log
+\line 
+\line 
+\line http://localhost/?abc=\'2e\'2e/\'2e\'2e/
+\line 
+\line \fs24\b
+
+\line [root @ rhel6]# tail \_f /var/log/modsec_audit\'2elog
+\line \b0
+Action: Intercepted (phase 1)
+\line Stopwatch: 1400759952621297 100087 (\_ \_ \_)
+\line Stopwatch2: 1400759952621297 100087; combined=770, p1=256, p2=0, 
+p3=0, p4=0, p5=514, sr=46, sw=0, l=0, gc=0
+\line Response\_Body\_Transformed: Dechunked
+\line Producer: ModSecurity for Apache/2\'2e8\'2e0 (http://www\'2emodsecurity\'2eorg/); 
+OWASP_CRS/2\'2e2\'2e7\'2e
+\line Server: Apache/2\'2e2\'2e25 (RHEL)
+\line Engine\_Mode: "ENABLED"
+\line 
+\line \_\_a1bea66b\_Z\_\_
+\line 
+\line 
+\line \fs24\b
+
+\line [root @ rhel6]# tail \_f /apps/apache/current/logs/error_log
+\line \b0
+[Thu May 22 07:59:08 2014] [notice] ModSecurity for Apache/2\'2e8\'2e0 
+(http://www\'2emodsecurity\'2eorg/) configured\'2e
+\line [Thu May 22 07:59:08 2014] [notice] ModSecurity: APR compiled 
+version="1\'2e5\'2e0"; loaded version="1\'2e5\'2e0"
+\line [Thu May 22 07:59:08 2014] [notice] ModSecurity: PCRE compiled 
+version="7\'2e8 "; loaded version="7\'2e8 2008\_09\_05"
+\line [Thu May 22 07:59:08 2014] [notice] ModSecurity: LUA compiled 
+version="Lua 5\'2e1"
+\line [Thu May 22 07:59:08 2014] [notice] ModSecurity: LIBXML compiled 
+version="2\'2e7\'2e6"
+\line [Thu May 22 07:59:08 2014] [notice] Status engine is currently 
+disabled, enable it by set SecStatusEngine to On\'2e
+\line [Thu May 22 07:59:08 2014] [warn] module ssl_module is already 
+loaded, skipping
+\line [Thu May 22 07:59:08 2014] [notice] Digest: generating secret 
+for digest authentication \'2e\'2e\'2e
+\line [Thu May 22 07:59:08 2014] [notice] Digest: done
+\line [Thu May 22 07:59:09 2014] [notice] Apache/2\'2e2\'2e25 (Unix) 
+DAV/2 mod_ssl/2\'2e2\'2e25 OpenSSL/1\'2e0\'2e1e\_fips configured \_\_ 
+resuming normal operations
+\line 
+\line }
