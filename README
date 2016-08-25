@@ -1,2 +1,6 @@
-Just started to use git hub with a simple perl script to automate my daily task.
-By the way, Novice programmer here !!
+PERL scripts to automate my routine RPM packaging Functional Testing works !!
+
+	- Reads the configs from "input.json" and selects the package and test cases to execute.
+	- Some of the test case include Installation, upgrade, uninstallation, package tree structure, process start/stop/restart, modules loaded, binary file type/arch and etc.
+	- debug logs are appended to "TEST_CASE.log"
+	- And finally, my favorite part - Creates a rtf document automatically and writes all the test case output to it.
