@@ -7,7 +7,7 @@ my $conf = q(
                     log4perl.logger                    = DEBUG, FileApp, ScreenApp
 
     log4perl.appender.FileApp          = Log::Log4perl::Appender::File
-    log4perl.appender.FileApp.filename = WFB_TEST_CASE.log
+    log4perl.appender.FileApp.filename = TEST_CASE.log
     log4perl.appender.FileApp.layout   = PatternLayout
     log4perl.appender.FileApp.layout.ConversionPattern = [ %d ] [ %F{1}:%L - %M ] [ %p ] %m%n
 
